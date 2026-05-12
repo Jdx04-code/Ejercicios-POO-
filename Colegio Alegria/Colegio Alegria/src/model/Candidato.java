@@ -11,13 +11,13 @@ public class Candidato {
    protected int numeroTarjeton;
    protected int cantidadVotos;
 
-    public Candidato(String nombre, String apellido, String grado, String lema, int numeroTarjeton, int cantidadVotos) {
+    public Candidato(String nombre, String apellido, String grado, String lema, int numeroTarjeton) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.grado = grado;
         this.lema = lema;
         this.numeroTarjeton = numeroTarjeton;
-        this.cantidadVotos = cantidadVotos;
+        this.cantidadVotos = 0;
     }
 
     public String getNombre() {

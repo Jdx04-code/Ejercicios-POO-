@@ -5,8 +5,8 @@ public class Personero extends  Candidato{
     
     private Mascota mascota;
 
-    public Personero(String nombre, String apellido, String grado, String lema, int numeroTarjeton, int cantidadVotos) {
-        super(nombre, apellido, grado, lema, numeroTarjeton, cantidadVotos);
+    public Personero(String nombre, String apellido, String grado, String lema, int numeroTarjeton) {
+        super(nombre, apellido, grado, lema, numeroTarjeton);
     }
 
     public Mascota getMascota() {
