@@ -6,7 +6,7 @@ public class RepresentanteGrado extends Candidato {
 
     private Estudiante formula;
 
-    public RepresentanteGrado(String nombre, String apellido, String grado, String lema, int numeroTarjeton) {
+    public RepresentanteGrado(String nombre, String apellido, String grado, String lema, String numeroTarjeton) {
         super(nombre, apellido, grado, lema, numeroTarjeton);
     }
 
@@ -50,11 +50,11 @@ public class RepresentanteGrado extends Candidato {
         this.lema = lema;
     }
 
-    public int getNumeroTarjeton() {
+    public String getNumeroTarjeton() {
         return numeroTarjeton;
     }
 
-    public void setNumeroTarjeton(int numeroTarjeton) {
+    public void setNumeroTarjeton(String numeroTarjeton) {
         this.numeroTarjeton = numeroTarjeton;
     }
 

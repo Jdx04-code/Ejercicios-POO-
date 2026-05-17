@@ -8,13 +8,12 @@ import model.*;
 public class ControllerRegistrarCandidato {
     
     private JFRegistrarCandidato frmCandidato;
-    private ArrayList<Personero> listaPersoneros;
-    private ArrayList<RepresentanteGrado> representante;
+    private ArrayList<Candidato> listaCandidatos;
+   
 
     public ControllerRegistrarCandidato(JFRegistrarCandidato registrarCandidato) {
         this.frmCandidato = registrarCandidato;
-        this.listaPersoneros = new ArrayList();
-        this.representante = new ArrayList();
+        this.listaCandidatos = new ArrayList();
         initEvents();
     }
 
@@ -23,27 +22,41 @@ public class ControllerRegistrarCandidato {
         
         this.frmCandidato.btnRegistrar.addActionListener(e->registrar());
         this.frmCandidato.btnMostrar.addActionListener(e->mostrar());
+        this.frmCandidato.btnActualizar.addActionListener(e->habilitarPanel());
         this.frmCandidato.panelPersonero.setVisible(false);
-        habilitarPanel();
+        this.frmCandidato.btnAñadirDato.addActionListener(e->registrarDatoExtra());
+        
     }
 
     private void registrar() {
        
       String nombre= this.frmCandidato.txtNombre.getText();
       String apellido = this.frmCandidato.txtApellido.getText();
-      String grado= this.frmCandidato.txtLema.getText();
+      String grado= this.frmCandidato.txtGrado.getText();
+      String lema= this.frmCandidato.txtLema.getText();
       String numeroTarjeton = this.frmCandidato.txtTarjeton.getText();
-      String datoExtra= this.frmCandidato.txtDato.getText();
+      
+      
        
-      if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || numeroTarjeton.isEmpty() || datoExtra.isEmpty()){
-          this.frmCandidato.areaResults.setText("COMPLETE LOS ESPACIOS");
-   
-    }
+     
     
       String decision= (String) this.frmCandidato.cmbTipo.getSelectedItem();
-        
+                    
                 if(decision.equals("Personero")){
-                        
+                    
+                            Mascota m= (Mascota) this.frmCandidato.cmbDatoExtra.getSelectedItem();
+                    
+                    
+                         if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || lema.isEmpty() || numeroTarjeton.isEmpty() || m==null){
+                              this.frmCandidato.areaResults.setText("COMPLETE LOS ESPACIOS");
+   
+                            }
+                         
+                       
+                    
+                       Personero p= new Personero( nombre, apellido, grado, lema, numeroTarjeton,m);
+
+
                }else if(decision.equals("Representante de grado")){
             
                   }
@@ -54,7 +67,7 @@ public class ControllerRegistrarCandidato {
     }
 
     private void mostrar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+      
     }
             
     
@@ -63,6 +76,7 @@ public class ControllerRegistrarCandidato {
         if(this.frmCandidato.cmbTipo.getSelectedItem()!=null){
              String decision= (String) this.frmCandidato.cmbTipo.getSelectedItem();
         
+             System.out.println(decision);
              if(decision.equals("Personero")){
             this.frmCandidato.panelPersonero.setVisible(true);
                    }   else if(decision.equals("Representante de grado")){
@@ -77,6 +91,12 @@ public class ControllerRegistrarCandidato {
         
         
     }
+
+    private void registrarDatoExtra() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+   
     
     
     

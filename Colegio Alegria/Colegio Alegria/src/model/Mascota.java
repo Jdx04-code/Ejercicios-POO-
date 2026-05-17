@@ -4,14 +4,15 @@ package model;
 
 public class Mascota {
     
-    private  int edad;
+    
     private String nombre;
+    private  int edad;
     private String genero;
     private String cualidades;
     private String id;
     private TipoMascota tipoMascota;
 
-    public Mascota(int edad, String nombre, String genero, String cualidades, String id, TipoMascota tipoMascota) {
+    public Mascota( String id, String nombre,int edad, String genero, String cualidades, TipoMascota tipoMascota) {
         this.edad = edad;
         this.nombre = nombre;
         this.genero = genero;

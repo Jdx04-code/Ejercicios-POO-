@@ -5,7 +5,7 @@ public class Personero extends  Candidato{
     
     private Mascota mascota;
 
-    public Personero(String nombre, String apellido, String grado, String lema, int numeroTarjeton) {
+    public Personero(String nombre, String apellido, String grado, String lema, String numeroTarjeton, Mascota mascota) {
         super(nombre, apellido, grado, lema, numeroTarjeton);
     }
 
@@ -49,11 +49,11 @@ public class Personero extends  Candidato{
         this.lema = lema;
     }
 
-    public int getNumeroTarjeton() {
+    public String getNumeroTarjeton() {
         return numeroTarjeton;
     }
 
-    public void setNumeroTarjeton(int numeroTarjeton) {
+    public void setNumeroTarjeton(String numeroTarjeton) {
         this.numeroTarjeton = numeroTarjeton;
     }
 

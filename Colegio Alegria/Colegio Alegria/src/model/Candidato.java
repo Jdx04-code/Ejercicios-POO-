@@ -8,10 +8,10 @@ public class Candidato {
    protected String apellido;
    protected  String grado;
    protected String lema;
-   protected int numeroTarjeton;
+   protected String numeroTarjeton;
    protected int cantidadVotos;
 
-    public Candidato(String nombre, String apellido, String grado, String lema, int numeroTarjeton) {
+    public Candidato(String nombre, String apellido, String grado, String lema, String numeroTarjeton) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.grado = grado;
@@ -52,11 +52,11 @@ public class Candidato {
         this.lema = lema;
     }
 
-    public int getNumeroTarjeton() {
+    public String getNumeroTarjeton() {
         return numeroTarjeton;
     }
 
-    public void setNumeroTarjeton(int numeroTarjeton) {
+    public void setNumeroTarjeton(String numeroTarjeton) {
         this.numeroTarjeton = numeroTarjeton;
     }
 
