@@ -158,6 +158,10 @@ public class ControllerMascota {
         frmMascota.txtCualidades.setText("");
         frmMascota.cmbTipo.setSelectedIndex(0);
     }
+
+    public ArrayList<Mascota> getListaMascotas() {
+        return listaMascotas;
+    }
     
     
 }

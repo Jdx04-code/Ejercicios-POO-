@@ -1,17 +1,18 @@
 
 package colegio.alegria;
-import view.JFRegistrarCandidato;
+import view.*;
 import controller.*;
 public class ColegioAlegria {
 
     public static void main(String[] args) {
          
-        JFRegistrarCandidato registrar = new JFRegistrarCandidato();
-        
-        ControllerRegistrarCandidato control= new ControllerRegistrarCandidato(registrar);
-        registrar.setVisible(true);
-        
-        
+    JFPrincipal principal = new JFPrincipal();
+    ControllerPrincipal control= new ControllerPrincipal(principal);
+        principal.setVisible(true);
+//        
+//        JFRegistrarCandidato registrar= new JFRegistrarCandidato();
+//        ControllerRegistrarCandidato controller= new ControllerRegistrarCandidato(registrar);
+//        registrar.setVisible(true);
     }
     
 }

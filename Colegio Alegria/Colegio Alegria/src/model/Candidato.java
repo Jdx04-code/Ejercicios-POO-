@@ -72,6 +72,11 @@ public class Candidato {
    cantidadVotos+=1;
   
   }
+
+    @Override
+    public String toString() {
+        return "Candidato{" + "nombre=" + nombre + ", apellido=" + apellido + ", grado=" + grado + ", lema=" + lema + ", numeroTarjeton=" + numeroTarjeton + ", cantidadVotos=" + cantidadVotos + '}';
+    }
    
    
    

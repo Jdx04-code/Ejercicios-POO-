@@ -6,7 +6,8 @@ public class RepresentanteGrado extends Candidato {
 
     private Estudiante formula;
 
-    public RepresentanteGrado(String nombre, String apellido, String grado, String lema, String numeroTarjeton) {
+    public RepresentanteGrado(String nombre, String apellido, String grado, String lema, String numeroTarjeton, Estudiante formula) {
+        this.formula=formula;
         super(nombre, apellido, grado, lema, numeroTarjeton);
     }
 

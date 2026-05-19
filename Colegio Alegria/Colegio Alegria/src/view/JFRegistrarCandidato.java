@@ -51,10 +51,9 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
         btnMostrar = new javax.swing.JButton();
         btnAñadirDato = new javax.swing.JButton();
         cmbDatoExtra = new javax.swing.JComboBox<>();
-        btnActualizar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel1.setText("REGISTRO CANDIDATO");
@@ -109,8 +108,6 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
         btnMostrar.addActionListener(this::btnMostrarActionPerformed);
 
         btnAñadirDato.setText("AÑADIR");
-
-        cmbDatoExtra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout panelPersoneroLayout = new javax.swing.GroupLayout(panelPersonero);
         panelPersonero.setLayout(panelPersoneroLayout);
@@ -186,9 +183,6 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
                 .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        btnActualizar.setText("ACTUALIZAR");
-        btnActualizar.addActionListener(this::btnActualizarActionPerformed);
-
         javax.swing.GroupLayout panelInfoLayout = new javax.swing.GroupLayout(panelInfo);
         panelInfo.setLayout(panelInfoLayout);
         panelInfoLayout.setHorizontalGroup(
@@ -200,10 +194,8 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
                     .addGroup(panelInfoLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(27, 27, 27)
-                        .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnActualizar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         panelInfoLayout.setVerticalGroup(
             panelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,8 +203,7 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addGroup(panelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnActualizar))
+                    .addComponent(cmbTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(panelPersonero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -250,7 +241,7 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
@@ -259,10 +250,6 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnMostrarActionPerformed
-
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,11 +278,11 @@ public class JFRegistrarCandidato extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextArea areaResults;
-    public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnAñadirDato;
     public javax.swing.JButton btnMostrar;
     public javax.swing.JButton btnRegistrar;
-    public javax.swing.JComboBox<Object> cmbDatoExtra;
+    public javax.swing.JComboBox<Object
+    > cmbDatoExtra;
     public javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

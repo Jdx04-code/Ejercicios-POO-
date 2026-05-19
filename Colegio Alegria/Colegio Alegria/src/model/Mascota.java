@@ -68,6 +68,13 @@ public class Mascota {
     public void setTipoMascota(TipoMascota tipoMascota) {
         this.tipoMascota = tipoMascota;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
+
+    
     
     
     

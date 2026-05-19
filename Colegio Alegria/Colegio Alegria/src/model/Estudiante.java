@@ -39,6 +39,11 @@ public class Estudiante {
     public void setRepresentante(RepresentanteGrado representante) {
         this.representante = representante;
     }
+
+    @Override
+    public String toString() {
+        return nombre;
+    }
     
     
     
