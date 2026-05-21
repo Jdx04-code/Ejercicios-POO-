@@ -5,12 +5,12 @@ package model;
 public class Estudiante {
     private String nombre;
     private String apellido;
-    private RepresentanteGrado representante;
+    
 
-    public Estudiante(String nombre, String apellido, RepresentanteGrado representante) {
+    public Estudiante(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.representante = representante;
+        
     }
 
     public Estudiante() {
@@ -32,13 +32,7 @@ public class Estudiante {
         this.apellido = apellido;
     }
 
-    public RepresentanteGrado getRepresentante() {
-        return representante;
-    }
 
-    public void setRepresentante(RepresentanteGrado representante) {
-        this.representante = representante;
-    }
 
     @Override
     public String toString() {

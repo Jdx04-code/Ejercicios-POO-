@@ -53,14 +53,15 @@ public class ControllerRegistrarCandidato {
                     
                 if(decision.equals("Personero")){
                     
-                           Mascota mascota= (Mascota) this.frmCandidato.cmbDatoExtra.getSelectedItem();
-                           ArrayList<Mascota> listaMascotas= controlMascota.getListaMascotas();
-                           System.out.println(mascota.toString());
+                            Mascota mascota= (Mascota) this.frmCandidato.cmbDatoExtra.getSelectedItem();
                            
                          if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || lema.isEmpty() || numeroTarjeton.isEmpty() || mascota==null){
                               this.frmCandidato.areaResults.setText("COMPLETE LOS ESPACIOS");
                                return;
                             }
+                        
+                           ArrayList<Mascota> listaMascotas= controlMascota.getListaMascotas();
+                           System.out.println(mascota.toString());
                          
                        Personero p= new Personero( nombre, apellido, grado, lema, numeroTarjeton,mascota);
                        System.out.println(
@@ -73,14 +74,16 @@ public class ControllerRegistrarCandidato {
                }else if(decision.equals("Representante de grado")){
             
                     Estudiante formula= (Estudiante) this.frmCandidato.cmbDatoExtra.getSelectedItem();
-                           ArrayList<Mascota> listaMascotas= controlMascota.getListaMascotas();
-                           System.out.println(formula.toString());
+                           
                            
                          if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || lema.isEmpty() || numeroTarjeton.isEmpty() || formula==null){
                               this.frmCandidato.areaResults.setText("COMPLETE LOS ESPACIOS");
                                return;
                             }
                          
+                         ArrayList<Mascota> listaMascotas= controlMascota.getListaMascotas();
+                           System.out.println(formula.toString());
+                           
                        RepresentanteGrado r = new RepresentanteGrado( nombre, apellido, grado, lema, numeroTarjeton,formula);
                        System.out.println(
                               r.getNombre()+"\n"+r.getApellido()+"\n"+r.getGrado()+"\n"+r.getLema()+"\n"+r.getNumeroTarjeton()+"\n"+r.getFormula().toString()+"\n");
@@ -119,6 +122,14 @@ public class ControllerRegistrarCandidato {
                         +"\nmascota: "+p.getMascota()
                 
                           );
+                           
+                           System.out.println("nombre: "+ p.getNombre()
+                        +"\napellido: "+p.getApellido()
+                        +"\ngrado: "+p.getGrado()
+                        +"\nlema: "+p.getLema()
+                        +"\ntarjeton: "+p.getNumeroTarjeton()
+                        +"\nmascota: "+p.getMascota());
+                           return;
                      }else if(c instanceof RepresentanteGrado){
                            RepresentanteGrado r= (RepresentanteGrado) c;
                          this.frmCandidato.areaResults.setText("nombre: "+ r.getNombre()
@@ -129,7 +140,13 @@ public class ControllerRegistrarCandidato {
                         +"\nformula "+r.getFormula()
                 
                           );
-                         
+                         System.out.println("nombre: "+ r.getNombre()
+                        +"\napellido: "+r.getApellido()
+                        +"\ngrado: "+r.getGrado()
+                        +"\nlema: "+r.getLema()
+                        +"\ntarjeton: "+r.getNumeroTarjeton()
+                        +"\nformula "+r.getFormula());
+                         return;
                          
                      }
             }

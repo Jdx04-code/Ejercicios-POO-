@@ -9,10 +9,7 @@ public class ColegioAlegria {
     JFPrincipal principal = new JFPrincipal();
     ControllerPrincipal control= new ControllerPrincipal(principal);
         principal.setVisible(true);
-//        
-//        JFRegistrarCandidato registrar= new JFRegistrarCandidato();
-//        ControllerRegistrarCandidato controller= new ControllerRegistrarCandidato(registrar);
-//        registrar.setVisible(true);
+
     }
     
 }

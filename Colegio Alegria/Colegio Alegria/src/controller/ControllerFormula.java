@@ -42,7 +42,7 @@ public class ControllerFormula {
             // VALIDAR CAMPOS VACIOS
             if (frmFormula.txtNombre.getText().trim().isEmpty()
                     || frmFormula.txtApellido.getText().trim().isEmpty()
-                    || frmFormula.txtGenero.getText().trim().isEmpty()) {
+                  ) {
 
                 JOptionPane.showMessageDialog(null,
                         "Todos los campos son obligatorios");
@@ -57,27 +57,9 @@ public class ControllerFormula {
             String apellido =
                     frmFormula.txtApellido.getText().trim();
 
-            String representanteNombre =
-                    frmFormula.txtGenero.getText().trim();
+           
             
-            ArrayList<Candidato> listaCandidatos = controller.getListaCandidatos();
-            
-            RepresentanteGrado r=null;
-            for(Candidato c: listaCandidatos){
-                if(c.getNombre().equals(representanteNombre)){
-                    if(c instanceof RepresentanteGrado){
-                         r=(RepresentanteGrado) c;
-                         break;
-                    }
-                             
-                }
-            }
-            
-            if(r==null){
-               JOptionPane.showMessageDialog(null,
-                            "No existe el representante");
-            }
-
+           
             // VALIDAR SI YA EXISTE
             for (Estudiante e : listaFormulas) {
 
@@ -94,8 +76,7 @@ public class ControllerFormula {
             // CREAR OBJETO
             Estudiante formula = new Estudiante(
                     nombre,
-                    apellido,
-                    r
+                    apellido
             );
 
             // AGREGAR
@@ -166,7 +147,7 @@ public class ControllerFormula {
 
         frmFormula.txtNombre.setText("");
         frmFormula.txtApellido.setText("");
-        frmFormula.txtGenero.setText("");
+      
     }
 
     public ArrayList<Estudiante> getListaFormulas() {
