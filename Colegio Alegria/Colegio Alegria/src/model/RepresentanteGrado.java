@@ -6,9 +6,9 @@ public class RepresentanteGrado extends Candidato {
 
     private Estudiante formula;
 
-    public RepresentanteGrado(String nombre, String apellido, String grado, String lema, String numeroTarjeton, Estudiante formula) {
+    public RepresentanteGrado(String nombre, String apellido, String grado, String lema, String numeroTarjeton, Estudiante formula, String rutaImagen) {
         this.formula=formula;
-        super(nombre, apellido, grado, lema, numeroTarjeton);
+        super(nombre, apellido, grado, lema, numeroTarjeton, rutaImagen);
     }
 
     public Estudiante getFormula() {
@@ -66,8 +66,19 @@ public class RepresentanteGrado extends Candidato {
     public void setCantidadVotos(int cantidadVotos) {
         this.cantidadVotos = cantidadVotos;
     }
+
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
+    }
     
-    
+    @Override
+    public String toString() {
+       return nombre + " "+ apellido;
+    }
     
     
 }

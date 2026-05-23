@@ -15,7 +15,7 @@ public class ControllerPrincipal {
         this.frmRegistrar = new JFRegistrarCandidato();
         this.frmVotar = new JFVotar();
         this.controllerRegistrar= new ControllerRegistrarCandidato(frmRegistrar);
-        this.controllerVotar= new ControllerVotar(frmVotar);
+        this.controllerVotar= new ControllerVotar(frmVotar,controllerRegistrar);
         initEvents();
     }
 

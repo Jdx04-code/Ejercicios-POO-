@@ -29,20 +29,176 @@ public class JFVotar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        cmbEleccion = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        chkBlanco = new javax.swing.JCheckBox();
+        chkNulo = new javax.swing.JCheckBox();
+        btnEnviarVotoBN = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        panelCandidatos = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        cmbCandidatos = new javax.swing.JComboBox<>();
+        lblImagen = new javax.swing.JLabel();
+        btnEnviar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        panelGanador = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        AreaGanador = new javax.swing.JTextArea();
+        btnResultados = new javax.swing.JButton();
+        lblIRepresentanteGanador = new javax.swing.JLabel();
+        lblPersoneroGanador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("PESTAÑA DE VOTACION");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("VOTACION"));
+
+        cmbEleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Personero", "Representante de grado" }));
+
+        jLabel2.setText("ELECCION:");
+
+        chkBlanco.setText("BLANCO");
+
+        chkNulo.setText("NULO");
+
+        btnEnviarVotoBN.setText("ENVIAR VOTO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 356, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(cmbEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chkBlanco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chkNulo)
+                        .addGap(106, 106, 106))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(btnEnviarVotoBN)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 390, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(chkBlanco)
+                            .addComponent(chkNulo))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmbEleccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEnviarVotoBN))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
+        jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        jLabel1.setText("ZONA DE VOTACION");
+
+        panelCandidatos.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+
+        jLabel3.setText("Candidatos:");
+
+        lblImagen.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        btnEnviar.setText("ENVIAR VOTO");
+
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel4.setText("GRACIAS POR TU VOTO :)");
+
+        javax.swing.GroupLayout panelCandidatosLayout = new javax.swing.GroupLayout(panelCandidatos);
+        panelCandidatos.setLayout(panelCandidatosLayout);
+        panelCandidatosLayout.setHorizontalGroup(
+            panelCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCandidatosLayout.createSequentialGroup()
+                .addGroup(panelCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelCandidatosLayout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addComponent(btnEnviar))
+                    .addGroup(panelCandidatosLayout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel4))
+                    .addGroup(panelCandidatosLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panelCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbCandidatos, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(94, Short.MAX_VALUE))
+        );
+        panelCandidatosLayout.setVerticalGroup(
+            panelCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelCandidatosLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(panelCandidatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(cmbCandidatos, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEnviar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        panelGanador.setBorder(javax.swing.BorderFactory.createTitledBorder("RESULTADOS"));
+
+        AreaGanador.setColumns(20);
+        AreaGanador.setRows(5);
+        jScrollPane1.setViewportView(AreaGanador);
+
+        btnResultados.setText("MOSTRAR RESULTADOS");
+
+        lblIRepresentanteGanador.setBorder(javax.swing.BorderFactory.createTitledBorder("REPRESENTANTE GANADOR"));
+
+        lblPersoneroGanador.setBorder(javax.swing.BorderFactory.createTitledBorder("PERSONERO GANADOR"));
+
+        javax.swing.GroupLayout panelGanadorLayout = new javax.swing.GroupLayout(panelGanador);
+        panelGanador.setLayout(panelGanadorLayout);
+        panelGanadorLayout.setHorizontalGroup(
+            panelGanadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGanadorLayout.createSequentialGroup()
+                .addGroup(panelGanadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelGanadorLayout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(btnResultados))
+                    .addGroup(panelGanadorLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(panelGanadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(panelGanadorLayout.createSequentialGroup()
+                                .addComponent(lblIRepresentanteGanador, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblPersoneroGanador, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(26, 26, 26)))))
+                .addContainerGap(18, Short.MAX_VALUE))
+        );
+        panelGanadorLayout.setVerticalGroup(
+            panelGanadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelGanadorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnResultados)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addGroup(panelGanadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblIRepresentanteGanador, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPersoneroGanador, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -50,16 +206,32 @@ public class JFVotar extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(468, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(panelCandidatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                        .addComponent(panelGanador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panelCandidatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(panelGanador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();
@@ -91,6 +263,24 @@ public class JFVotar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JTextArea AreaGanador;
+    public javax.swing.JButton btnEnviar;
+    public javax.swing.JButton btnEnviarVotoBN;
+    public javax.swing.JButton btnResultados;
+    public javax.swing.JCheckBox chkBlanco;
+    public javax.swing.JCheckBox chkNulo;
+    public javax.swing.JComboBox<Object> cmbCandidatos;
+    public javax.swing.JComboBox<String> cmbEleccion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel lblIRepresentanteGanador;
+    public javax.swing.JLabel lblImagen;
+    public javax.swing.JLabel lblPersoneroGanador;
+    public javax.swing.JPanel panelCandidatos;
+    private javax.swing.JPanel panelGanador;
     // End of variables declaration//GEN-END:variables
 }

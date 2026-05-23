@@ -8,14 +8,17 @@ public class Voto {
     private boolean blanco;
     private Candidato candidato;
     private boolean esNulo;
-    private Candidato tipoVoto;
+    private String tipoVoto;
 
-    public Voto(boolean blanco, Candidato candidato, boolean esNulo, Candidato tipoVoto) {
+    public Voto(boolean blanco, Candidato candidato, boolean esNulo, String tipoVoto) {
         this.blanco = blanco;
         this.candidato = candidato;
         this.esNulo = esNulo;
         this.tipoVoto = tipoVoto;
     }
+
+ 
+  
 
     public boolean isBlanco() {
         return blanco;
@@ -41,11 +44,11 @@ public class Voto {
         this.esNulo = esNulo;
     }
 
-    public Candidato getTipoVoto() {
+    public String getTipoVoto() {
         return tipoVoto;
     }
 
-    public void setTipoVoto(Candidato tipoVoto) {
+    public void setTipoVoto(String tipoVoto) {
         this.tipoVoto = tipoVoto;
     }
     

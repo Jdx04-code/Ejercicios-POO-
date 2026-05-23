@@ -10,13 +10,15 @@ public class Candidato {
    protected String lema;
    protected String numeroTarjeton;
    protected int cantidadVotos;
+   protected String rutaImagen;
 
-    public Candidato(String nombre, String apellido, String grado, String lema, String numeroTarjeton) {
+    public Candidato(String nombre, String apellido, String grado, String lema, String numeroTarjeton, String rutaImagen) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.grado = grado;
         this.lema = lema;
         this.numeroTarjeton = numeroTarjeton;
+        this.rutaImagen=rutaImagen;
         this.cantidadVotos = 0;
     }
 
@@ -73,6 +75,15 @@ public class Candidato {
   
   }
 
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
+    }
+
+  
     @Override
     public String toString() {
         return "Candidato{" + "nombre=" + nombre + ", apellido=" + apellido + ", grado=" + grado + ", lema=" + lema + ", numeroTarjeton=" + numeroTarjeton + ", cantidadVotos=" + cantidadVotos + '}';

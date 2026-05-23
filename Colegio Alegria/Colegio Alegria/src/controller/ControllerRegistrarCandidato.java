@@ -2,6 +2,8 @@
 package controller;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.border.TitledBorder;
 import view.*;
 import model.*;
@@ -14,7 +16,8 @@ public class ControllerRegistrarCandidato {
    private JFRegistrarFormula frmFormula;
    private ControllerMascota controlMascota;
    private ControllerFormula controlFormula;
-
+    private String ruta;
+   
     public ControllerRegistrarCandidato(JFRegistrarCandidato registrarCandidato) {
      
         this.frmMascota= new JFRegistrarMascota();
@@ -33,8 +36,8 @@ public class ControllerRegistrarCandidato {
         this.frmCandidato.btnMostrar.addActionListener(e->mostrar());
         this.frmCandidato.cmbTipo.addActionListener(e->habilitarPanel());
         this.frmCandidato.panelPersonero.setVisible(false);
-        this.frmCandidato.btnAñadirDato.addActionListener(e->registrarDatoExtra());
-        
+        this.frmCandidato.btnAñadirImagen.addActionListener(e->registrarImagen());
+        this.frmCandidato.btnAgregarDato.addActionListener(e->añadirDatoCmb());
     }
 
     private void registrar() {
@@ -54,8 +57,10 @@ public class ControllerRegistrarCandidato {
                 if(decision.equals("Personero")){
                     
                             Mascota mascota= (Mascota) this.frmCandidato.cmbDatoExtra.getSelectedItem();
-                           
-                         if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || lema.isEmpty() || numeroTarjeton.isEmpty() || mascota==null){
+                            
+                            
+                            
+                         if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || lema.isEmpty() || numeroTarjeton.isEmpty() || mascota==null || ruta.isEmpty()){
                               this.frmCandidato.areaResults.setText("COMPLETE LOS ESPACIOS");
                                return;
                             }
@@ -63,9 +68,12 @@ public class ControllerRegistrarCandidato {
                            ArrayList<Mascota> listaMascotas= controlMascota.getListaMascotas();
                            System.out.println(mascota.toString());
                          
-                       Personero p= new Personero( nombre, apellido, grado, lema, numeroTarjeton,mascota);
+                          
+                         
+                                   
+                       Personero p= new Personero( nombre, apellido, grado, lema, numeroTarjeton,mascota, ruta);
                        System.out.println(
-                               p.getNombre()+"\n"+p.getApellido()+"\n"+p.getGrado()+"\n"+p.getLema()+"\n"+p.getNumeroTarjeton()+"\n"+p.getMascota().toString()+"\n");
+                               p.getNombre()+"\n"+p.getApellido()+"\n"+p.getGrado()+"\n"+p.getLema()+"\n"+p.getNumeroTarjeton()+"\n"+p.getMascota().toString()+"\n"+p.getRutaImagen());
                        
                                listaCandidatos.add(p);
                        
@@ -76,17 +84,18 @@ public class ControllerRegistrarCandidato {
                     Estudiante formula= (Estudiante) this.frmCandidato.cmbDatoExtra.getSelectedItem();
                            
                            
-                         if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || lema.isEmpty() || numeroTarjeton.isEmpty() || formula==null){
+                            
+                         if(nombre.isEmpty() || apellido.isEmpty() || grado.isEmpty() || lema.isEmpty() || numeroTarjeton.isEmpty() || formula==null || ruta.isEmpty()){
                               this.frmCandidato.areaResults.setText("COMPLETE LOS ESPACIOS");
                                return;
                             }
                          
-                         ArrayList<Mascota> listaMascotas= controlMascota.getListaMascotas();
+                         ArrayList<Estudiante> listaEstudiante= controlFormula.getListaFormulas();
                            System.out.println(formula.toString());
                            
-                       RepresentanteGrado r = new RepresentanteGrado( nombre, apellido, grado, lema, numeroTarjeton,formula);
+                       RepresentanteGrado r = new RepresentanteGrado( nombre, apellido, grado, lema, numeroTarjeton,formula, ruta);
                        System.out.println(
-                              r.getNombre()+"\n"+r.getApellido()+"\n"+r.getGrado()+"\n"+r.getLema()+"\n"+r.getNumeroTarjeton()+"\n"+r.getFormula().toString()+"\n");
+                              r.getNombre()+"\n"+r.getApellido()+"\n"+r.getGrado()+"\n"+r.getLema()+"\n"+r.getNumeroTarjeton()+"\n"+r.getFormula().toString()+"\n"+r.getRutaImagen());
                              listaCandidatos.add(r);
                        limpiar();
                    
@@ -120,8 +129,9 @@ public class ControllerRegistrarCandidato {
                         +"\nlema: "+p.getLema()
                         +"\ntarjeton: "+p.getNumeroTarjeton()
                         +"\nmascota: "+p.getMascota()
-                
+                         
                           );
+                this.frmCandidato.lblImagen.setIcon(new ImageIcon(ruta));
                            
                            System.out.println("nombre: "+ p.getNombre()
                         +"\napellido: "+p.getApellido()
@@ -205,17 +215,24 @@ public class ControllerRegistrarCandidato {
         
     }
 
-    private void registrarDatoExtra() {
+    private void registrarImagen() {
         
-    String decision= (String) this.frmCandidato.cmbTipo.getSelectedItem();
-        if(decision.equals("Personero")){
-             frmMascota.setVisible(true);
-           
-        }else{
-            frmFormula.setVisible(true);
-            
-         
+      JFileChooser selector = new JFileChooser();
+
+        int opcion = selector.showOpenDialog(frmCandidato);
+        
+    
+                
+    if(opcion == JFileChooser.APPROVE_OPTION){
+
+    
+         ruta=   selector.getSelectedFile()
+                    .getAbsolutePath();
+   
+    
         }
+    
+        
     }
 
     public ArrayList<Candidato> getListaCandidatos() {
@@ -235,6 +252,20 @@ public class ControllerRegistrarCandidato {
        
        
    }
+
+    private void añadirDatoCmb() {
+
+          String decision= (String) this.frmCandidato.cmbTipo.getSelectedItem();
+        if(decision.equals("Personero")){
+             frmMascota.setVisible(true);
+           
+        }else{
+            frmFormula.setVisible(true);
+            
+         
+        }
+        
+    }
     
     
     

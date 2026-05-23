@@ -5,9 +5,9 @@ public class Personero extends  Candidato{
     
     private Mascota mascota;
 
-    public Personero(String nombre, String apellido, String grado, String lema, String numeroTarjeton, Mascota mascota) {
+    public Personero(String nombre, String apellido, String grado, String lema, String numeroTarjeton, Mascota mascota, String rutaImagen) {
         this.mascota = mascota;
-        super(nombre, apellido, grado, lema, numeroTarjeton);
+        super(nombre, apellido, grado, lema, numeroTarjeton, rutaImagen);
     }
 
     public Mascota getMascota() {
@@ -66,9 +66,18 @@ public class Personero extends  Candidato{
         this.cantidadVotos = cantidadVotos;
     }
 
+   
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
+
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
+    }
+
     @Override
     public String toString() {
-        return "Personero{" + "mascota=" + mascota + '}';
+       return nombre + " "+ apellido;
     }
 
     

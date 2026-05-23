@@ -8,7 +8,10 @@ public class ColegioAlegria {
          
     JFPrincipal principal = new JFPrincipal();
     ControllerPrincipal control= new ControllerPrincipal(principal);
-        principal.setVisible(true);
+    principal.setVisible(true);
+
+
+
 
     }
     
