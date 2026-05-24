@@ -10,10 +10,12 @@ public class ControllerMascota {
     
     private JFRegistrarMascota frmMascota;
     private ArrayList<Mascota> listaMascotas;
-
-    public ControllerMascota(JFRegistrarMascota frmMascota) {
+    private ControllerRegistrarCandidato control;
+    
+    public ControllerMascota(JFRegistrarMascota frmMascota, ControllerRegistrarCandidato control) {
         this.frmMascota = frmMascota;
         this.listaMascotas = new ArrayList();
+        this.control= control;
         initEvents();
     }
 
@@ -143,7 +145,7 @@ public class ControllerMascota {
                     "La edad debe ser numérica");
         }
         
-        
+        this.control.habilitarPanel();
         
         
     }

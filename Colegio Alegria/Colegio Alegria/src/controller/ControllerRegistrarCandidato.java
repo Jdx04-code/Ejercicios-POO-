@@ -25,7 +25,7 @@ public class ControllerRegistrarCandidato {
         this.frmCandidato = registrarCandidato;
         this.listaCandidatos = new ArrayList();
            this.controlFormula=new ControllerFormula(frmFormula,this);
-         this.controlMascota=new ControllerMascota(frmMascota);
+         this.controlMascota=new ControllerMascota(frmMascota,this);
         initEvents();
     }
 
@@ -165,7 +165,7 @@ public class ControllerRegistrarCandidato {
     }
             
     
-    private void habilitarPanel(){
+    public void habilitarPanel(){
         
         if(this.frmCandidato.cmbTipo.getSelectedItem()!=null){
              String decision= (String) this.frmCandidato.cmbTipo.getSelectedItem();

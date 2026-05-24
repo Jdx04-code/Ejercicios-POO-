@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Jose Angarita
@@ -17,6 +19,11 @@ public class JFRegistrarFormula extends javax.swing.JFrame {
      */
     public JFRegistrarFormula() {
         initComponents();
+         setIconImage(
+                 new ImageIcon(
+                getClass().getResource("/view/caja.png")
+            ).getImage()
+         );
     }
 
     /**

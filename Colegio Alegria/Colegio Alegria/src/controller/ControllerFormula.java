@@ -86,7 +86,7 @@ public class ControllerFormula {
                     "Formula registrada correctamente");
 
             limpiarCampos();
-
+            this.controller.habilitarPanel();
         } catch (Exception e) {
 
             JOptionPane.showMessageDialog(null,
@@ -141,6 +141,7 @@ public class ControllerFormula {
                 "Formula eliminada correctamente");
 
         limpiarCampos();
+        
     }
 
     private void limpiarCampos() {

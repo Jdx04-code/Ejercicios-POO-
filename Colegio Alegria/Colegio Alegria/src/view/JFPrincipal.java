@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Jose Angarita
@@ -17,6 +19,12 @@ public class JFPrincipal extends javax.swing.JFrame {
      */
     public JFPrincipal() {
         initComponents();
+        this.setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
+         setIconImage(
+            new ImageIcon(
+                getClass().getResource("caja.png")
+            ).getImage()
+        );
     }
 
     /**
@@ -35,6 +43,8 @@ public class JFPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("SISTEMA DE VOTACION");
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
 
         jLabel1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         jLabel1.setText("SISTEMA DE VOTACION COLEGIO ALEGRIA");
