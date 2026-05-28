@@ -22,7 +22,7 @@ public class ControllerPrincipal {
         this.frmRecomendar = new JFRecomendar();
         this.frmUsuario = new JFUsuario();
         this.controlUsuario = new ControllerUsuario(frmUsuario);
-        this.controlRecomendar= new ControllerRecomendar(frmRecomendar);
+        this.controlRecomendar= new ControllerRecomendar(frmRecomendar,controlUsuario);
         initEvents();
     }
 
@@ -35,8 +35,7 @@ public class ControllerPrincipal {
     private void abrirRecomendar() {
         
         frmRecomendar.setVisible(true);
-        
-        
+        controlRecomendar.llenarCombo();
     }
 
     private void abrirRegistrar() {

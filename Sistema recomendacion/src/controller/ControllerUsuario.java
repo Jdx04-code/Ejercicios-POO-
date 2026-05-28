@@ -20,6 +20,7 @@ public class ControllerUsuario {
     private ArrayList<Genero> listaGenerosPreferidos;
     private ControllerPelicula controlPeli;
     private JFPelicula frmPelicula;
+    
 
     public ControllerUsuario(JFUsuario frmUsuario ) {
         this.frmUsuario = frmUsuario;
@@ -28,6 +29,7 @@ public class ControllerUsuario {
         this.controlPeli=new ControllerPelicula(frmPelicula);
         this.listaGenerosPreferidos= new ArrayList();
         this.listaPeliculasVistas= new ArrayList();
+       
         initEvents();
     }
 
@@ -44,28 +46,27 @@ public class ControllerUsuario {
 
     private void registrar() {
         
-      String id = this.frmUsuario.txtId.getText();
+   String id = this.frmUsuario.txtId.getText();
     String nombre = this.frmUsuario.txtNombre.getText();
-        
-    if(id.isEmpty() || nombre.isEmpty() 
-            || listaGenerosPreferidos.isEmpty() 
-            || listaPeliculasVistas.isEmpty()) {
+
+    if(id.isEmpty() || nombre.isEmpty()) {
 
         this.frmUsuario.areaInformacion.setText(
                 "POR FAVOR COMPLETE TODOS LOS ESPACIOS"
         );
         return;
     }
-        
+
     Usuario user = new Usuario(
             nombre,
             id,
-            listaGenerosPreferidos,
-            listaPeliculasVistas
+            new ArrayList<>(listaGenerosPreferidos),
+            new ArrayList<>(listaPeliculasVistas)
     );
 
     listaUsuarios.add(user);
-       
+   
+    
     frmUsuario.areaInformacion.append(
             "Usuario añadido\n"
             + "Nombre: " + user.getNombre() + "\n"
@@ -76,13 +77,11 @@ public class ControllerUsuario {
             + user.getHistorialVisualizacion().toString() + "\n"
     );
 
-    // LIMPIAR DESPUES DE REGISTRAR
     limpiar();
 
-    // LIMPIAR LISTAS TEMPORALES
-    listaPeliculasVistas = new ArrayList<>();
-    listaGenerosPreferidos = new ArrayList<>();
-        
+    listaPeliculasVistas.clear();
+    listaGenerosPreferidos.clear();
+     
 
     }
 
@@ -138,7 +137,7 @@ public class ControllerUsuario {
     this.frmUsuario.chkPelicula.setSelected(false);
     this.frmUsuario.chkPreferencias.setSelected(false);
 
-    this.frmUsuario.areaInformacion.setText("");
+ 
 
     this.frmUsuario.txtId.requestFocus();
 
@@ -218,7 +217,13 @@ public class ControllerUsuario {
 
 
     }
+
+    public ArrayList<Usuario> getListaUsuarios() {
+        return listaUsuarios;
+    }
     
    
     
 }
+// || listaGenerosPreferidos.isEmpty() 
+//            || listaPeliculasVistas.isEmpty()
