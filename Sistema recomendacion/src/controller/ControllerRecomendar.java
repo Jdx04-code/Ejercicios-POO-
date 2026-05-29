@@ -326,11 +326,145 @@ public void agregarPeliculas() {
 
     private void generarRecomendacion() {
 
-        Usuario u= (Usuario)this.frmRecomendar.cmbUsuario.getSelectedItem();
-           
-         ArrayList<Pelicula> listaPelicula= u.getHistorialVisualizacion();
+          Usuario u =
+    (Usuario) this.frmRecomendar
+            .cmbUsuario
+            .getSelectedItem();
 
+    if(u==null){
+         this.frmRecomendar.areaRecomendacion
+            .setBorder(
+                    new TitledBorder(
+                            "AVISO"
+                    )
+            );
 
+    this.frmRecomendar.areaRecomendacion
+            .setText(
+                    "no escogio ningun usuario "
+                   
+            );
+    }
+    ArrayList<Pelicula> listaPelicula =
+            u.getHistorialVisualizacion();
+
+    // CONTADORES
+    int accion = 0;
+    int animacion = 0;
+    int terror = 0;
+    int comedia = 0;
+    int drama = 0;
+    int romance = 0;
+
+    // CONTAR GENEROS
+    for(Pelicula p : listaPelicula){
+
+        if(p.getGenero() == Genero.ACCION){
+
+            accion++;
+
+        }else if(p.getGenero() == Genero.ANIMACION){
+
+            animacion++;
+
+        }else if(p.getGenero() == Genero.TERROR){
+
+            terror++;
+
+        }else if(p.getGenero() == Genero.COMEDIA){
+
+            comedia++;
+
+        }else if(p.getGenero() == Genero.DRAMA){
+
+            drama++;
+
+        }else if(p.getGenero() == Genero.ROMANCE){
+
+            romance++;
+        }
+    }
+
+    // BUSCAR GENERO FAVORITO
+    int mayor = accion;
+    Genero favorito = Genero.ACCION;
+
+    if(animacion > mayor){
+
+        mayor = animacion;
+        favorito = Genero.ANIMACION;
+    }
+
+    if(terror > mayor){
+
+        mayor = terror;
+        favorito = Genero.TERROR;
+    }
+
+    if(comedia > mayor){
+
+        mayor = comedia;
+        favorito = Genero.COMEDIA;
+    }
+
+    if(drama > mayor){
+
+        mayor = drama;
+        favorito = Genero.DRAMA;
+    }
+
+    if(romance > mayor){
+
+        mayor = romance;
+        favorito = Genero.ROMANCE;
+    }
+
+    // RECOMENDACIONES
+    String recomendadas = "";
+
+    ArrayList<Pelicula> todas =
+            controlPelicula.getListaPeliculas();
+
+    for(Pelicula peli : todas){
+
+        boolean yaLaVio = false;
+
+        // VER SI YA LA VIO
+        for(Pelicula vista : listaPelicula){
+
+            if(vista.getNombre()
+                    .equals(peli.getNombre())){
+
+                yaLaVio = true;
+            }
+        }
+
+        // RECOMENDAR
+        if(peli.getGenero() == favorito
+                && !yaLaVio){
+
+            recomendadas +=
+                    peli.getNombre() + "\n";
+        }
+    }
+
+    // MOSTRAR
+    this.frmRecomendar.areaRecomendacion
+            .setBorder(
+                    new TitledBorder(
+                            "RECOMENDACIONES"
+                    )
+            );
+
+    this.frmRecomendar.areaRecomendacion
+            .setText(
+                    "GENERO FAVORITO: "
+                    + favorito
+                    + "\n\n"
+                    + recomendadas
+            );
+
+            
 
     }
 

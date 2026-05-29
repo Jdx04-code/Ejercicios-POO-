@@ -60,6 +60,15 @@ public class ControllerUsuario {
         return;
     }
 
+    for(Usuario u:listaUsuarios){
+        if(u.getId().equals(id)){
+              this.frmUsuario.areaInformacion.setText(
+                "Usuario duplicado"
+        );
+        return;
+        }
+    }
+    
     Usuario user = new Usuario(
             nombre,
             id,
@@ -71,7 +80,7 @@ public class ControllerUsuario {
    
     
     frmUsuario.areaInformacion.append(
-            "Usuario añadido\n"
+            "-----------Usuario añadido------------\n"
             + "Nombre: " + user.getNombre() + "\n"
             + "ID: " + user.getId() + "\n"
             + "GENEROS QUE LE GUSTAN:\n"
