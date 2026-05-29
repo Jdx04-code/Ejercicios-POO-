@@ -14,15 +14,36 @@ public class ControllerPrincipal {
     private JFPrincipal frmPrincipal;
     private JFRecomendar frmRecomendar;
     private JFUsuario frmUsuario;
+    private JFPelicula frmPelicula;
+
     private ControllerUsuario controlUsuario;
     private ControllerRecomendar controlRecomendar;
+    private ControllerPelicula controlPeli;
 
     public ControllerPrincipal(JFPrincipal frmPrincipal) {
+
         this.frmPrincipal = frmPrincipal;
+
         this.frmRecomendar = new JFRecomendar();
         this.frmUsuario = new JFUsuario();
-        this.controlUsuario = new ControllerUsuario(frmUsuario);
-        this.controlRecomendar= new ControllerRecomendar(frmRecomendar,controlUsuario);
+        this.frmPelicula = new JFPelicula();
+
+        this.controlPeli =
+                new ControllerPelicula(frmPelicula);
+
+        this.controlUsuario =
+                new ControllerUsuario(
+                        frmUsuario,
+                        controlPeli
+                );
+
+        this.controlRecomendar =
+                new ControllerRecomendar(
+                        frmRecomendar,
+                        controlUsuario
+                        ,controlPeli
+                );
+
         initEvents();
     }
 

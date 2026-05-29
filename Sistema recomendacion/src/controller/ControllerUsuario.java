@@ -22,16 +22,19 @@ public class ControllerUsuario {
     private JFPelicula frmPelicula;
     
 
-    public ControllerUsuario(JFUsuario frmUsuario ) {
-        this.frmUsuario = frmUsuario;
-        this.frmPelicula=new JFPelicula();
-        this.listaUsuarios = new ArrayList();
-        this.controlPeli=new ControllerPelicula(frmPelicula);
-        this.listaGenerosPreferidos= new ArrayList();
-        this.listaPeliculasVistas= new ArrayList();
-       
-        initEvents();
-    }
+ public ControllerUsuario(
+        JFUsuario frmUsuario,
+        ControllerPelicula controlPeli) {
+
+    this.frmUsuario = frmUsuario;
+    this.controlPeli = controlPeli;
+
+    this.listaUsuarios = new ArrayList<>();
+    this.listaGenerosPreferidos = new ArrayList<>();
+    this.listaPeliculasVistas = new ArrayList<>();
+
+    initEvents();
+}
 
     private void initEvents() {
 

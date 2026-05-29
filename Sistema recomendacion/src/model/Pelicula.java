@@ -10,6 +10,7 @@ public class Pelicula {
     private ArrayList<Comentario>listaDeComentarios;
     private String anio;
     private String Director;
+    private int cantidadCalificaciones;
 
     public Pelicula() {
     }
@@ -84,6 +85,47 @@ public class Pelicula {
     public String toString() {
         return  nombre;
     }
+    
+    public void promediarCalificacion(double valor){
+       calificacionPromedio =
+    ((calificacionPromedio * cantidadCalificaciones)
+    + valor)
+    / (cantidadCalificaciones + 1);
+
+    cantidadCalificaciones++;
+        
+    }
+
+    public int getCantidadCalificaciones() {
+        return cantidadCalificaciones;
+    }
+
+    public void setCantidadCalificaciones(int cantidadCalificaciones) {
+        this.cantidadCalificaciones = cantidadCalificaciones;
+    }
+    
+
+public String toString2() {
+
+    return
+    "=====================================\n" +
+    "PELÍCULA\n" +
+    "=====================================\n" +
+    "Nombre: " + nombre + "\n" +
+    "Género: " + genero + "\n" +
+    "Duración: " + duracion + "\n" +
+    "Calificación promedio: "
+            + calificacionPromedio + "\n" +
+    "Cantidad de comentarios: "
+            + listaDeComentarios.size() + "\n" +
+    "Año: " + anio + "\n" +
+    "Director: " + Director + "\n" +
+    "Cantidad de calificaciones: "
+            + cantidadCalificaciones + "\n" +
+    "=====================================";
+
+}
+    
     
     
     

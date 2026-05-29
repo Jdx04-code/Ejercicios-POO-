@@ -70,11 +70,18 @@ public class JFRecomendar extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(tablePeliculas);
@@ -107,7 +114,7 @@ public class JFRecomendar extends javax.swing.JFrame {
 
         btnCalificar.setText("CALIFICAR PELICULA");
 
-        btnMostrar.setText("Mostrar todo");
+        btnMostrar.setText("Mostrar Peliculas ");
 
         btnGenerarRecomendacion.setText("GENERAR RECOMENDACION");
 
@@ -151,7 +158,7 @@ public class JFRecomendar extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(90, 90, 90)
                                 .addComponent(jLabel2)))))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,13 +186,13 @@ public class JFRecomendar extends javax.swing.JFrame {
                         .addComponent(btnComentar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnCalificar)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnVerDetalles)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnVisto)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnGenerarRecomendacion)
-                        .addGap(66, 66, 66)
+                        .addGap(96, 96, 96)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -238,7 +245,7 @@ public class JFRecomendar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BtnBuscarPorTitulo;
-    private javax.swing.JTextArea areaRecomendacion;
+    public javax.swing.JTextArea areaRecomendacion;
     public javax.swing.JButton btnBuscarDirector;
     public javax.swing.JButton btnBuscarGenero;
     public javax.swing.JButton btnCalificar;

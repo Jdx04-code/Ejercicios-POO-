@@ -179,9 +179,9 @@ public class ControllerPelicula {
 
     listaPeliculas.add(new Pelicula("2011", 0.0, "Asif Kapadia", "100 min", documental, new ArrayList<>(), "Senna"));
     listaPeliculas.add(new Pelicula("2004", 0.0, "Morgan Spurlock", "100 min", documental, new ArrayList<>(), "Super Size Me"));
-    listaPeliculas.add(new Pelicula("2006", 0.0, "Davis Guggenheim", "100 min", documental, new ArrayList<>(), "Una Verdad Incomoda"));
-    listaPeliculas.add(new Pelicula("2013", 0.0, "Asif Kapadia", "128 min", documental, new ArrayList<>(), "Amy"));
-    listaPeliculas.add(new Pelicula("2005", 0.0, "Werner Herzog", "103 min", documental, new ArrayList<>(), "Grizzly Man"));
+    listaPeliculas.add(new Pelicula("2006", 0.0, "Davis Guggenheim", "100 min", documental, new ArrayList<Comentario>(), "Una Verdad Incomoda"));
+    listaPeliculas.add(new Pelicula("2013", 0.0, "Asif Kapadia", "128 min", documental, new ArrayList<Comentario>(), "Amy"));
+    listaPeliculas.add(new Pelicula("2005", 0.0, "Werner Herzog", "103 min", documental, new ArrayList<Comentario>(), "Grizzly Man"));
 
 }
 
