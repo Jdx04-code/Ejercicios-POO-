@@ -38,9 +38,7 @@ public class ControllerPrestamos {
         frmPrestamo.cmbLibros.addActionListener(e -> llenarComboCopias());
     }
 
-    // =========================
-    // REGISTRAR
-    // =========================
+    
     private void registrar() {
 
         try {
@@ -100,9 +98,7 @@ public class ControllerPrestamos {
         }
     }
 
-    // =========================
-    // DEVOLVER
-    // =========================
+
     private void devolverLibro() {
 
         int fila = frmPrestamo.tablePrestamos.getSelectedRow();
@@ -130,9 +126,7 @@ public class ControllerPrestamos {
         llenarComboCopias();
     }
 
-    // =========================
-    // ELIMINAR
-    // =========================
+  
     private void eliminar() {
 
         int fila = frmPrestamo.tablePrestamos.getSelectedRow();
@@ -154,9 +148,7 @@ public class ControllerPrestamos {
         llenarComboCopias();
     }
 
-    // =========================
-    // LIMPIAR
-    // =========================
+    
     private void limpiar() {
 
         frmPrestamo.txtID.setText("");
@@ -172,9 +164,7 @@ public class ControllerPrestamos {
         }
     }
 
-    // =========================
-    // COMBOS
-    // =========================
+ 
     private void llenarComboBoxUsuarios() {
 
         frmPrestamo.cmbUsuarios.removeAllItems();
@@ -213,9 +203,6 @@ public class ControllerPrestamos {
         llenarComboCopias();
     }
 
-    // =========================
-    // TABLA
-    // =========================
     private void actualizarTabla() {
 
         javax.swing.table.DefaultTableModel modelo =

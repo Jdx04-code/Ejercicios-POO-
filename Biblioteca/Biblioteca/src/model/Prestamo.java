@@ -30,9 +30,7 @@ public class Prestamo {
         this.multa = 0;
     }
 
-    // =======================
-    // GETTERS Y SETTERS
-    // =======================
+   
 
     public String getIdPrestamo() {
         return idPrestamo;
@@ -86,14 +84,8 @@ public class Prestamo {
         return multa;
     }
 
-    // =======================
-    // LÓGICA CORRECTA
-    // =======================
-
-    /**
-     * NO modifica el estado interno.
-     * Solo calcula cómo debería mostrarse.
-     */
+   
+     
     public EstadoPrestamo estadoActual() {
 
         if (estadoPrestamo == EstadoPrestamo.DEVUELTO) {
@@ -128,9 +120,7 @@ public class Prestamo {
         multa = dias * 1000; // puedes cambiar valor por día
     }
 
-    /**
-     * SOLO se usa al devolver libro
-     */
+ 
     public void marcarDevuelto() {
         estadoPrestamo = EstadoPrestamo.DEVUELTO;
         calcularMulta();
