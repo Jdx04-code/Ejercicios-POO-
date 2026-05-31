@@ -51,7 +51,7 @@ public class JFPrincipal extends javax.swing.JFrame {
 
         btnLibros2.setText("GESTION LIBROS");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/XDDD.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon2.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
