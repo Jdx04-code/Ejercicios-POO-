@@ -320,8 +320,8 @@ public class JFHechizo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable tablePersonajes;
     public javax.swing.JTextField txtConsultar1;
-    private javax.swing.JTextField txtId;
-    private javax.swing.JTextField txtNombre;
-    private javax.swing.JTextField txtUso;
+    public javax.swing.JTextField txtId;
+    public javax.swing.JTextField txtNombre;
+    public javax.swing.JTextField txtUso;
     // End of variables declaration//GEN-END:variables
 }

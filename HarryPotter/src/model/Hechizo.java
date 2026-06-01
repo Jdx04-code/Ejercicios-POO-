@@ -12,15 +12,15 @@ public class Hechizo {
 
     private String nombre;
     private String uso;
-    private double dano;
+    private String id;
 
     public Hechizo(String nombre,
             String uso,
-            double dano) {
+            String id) {
 
         this.nombre = nombre;
         this.uso = uso;
-        this.dano = dano;
+        this.id = id;
     }
 
     public String getNombre() {
@@ -35,12 +35,18 @@ public class Hechizo {
         this.uso = uso;
     }
 
-    public double getDano() {
-        return dano;
+    public String getId() {
+        return id;
     }
 
-    public void setDano(double dano) {
-        this.dano = dano;
+    public void setId(String id) {
+        this.id = id;
     }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+   
     
 }

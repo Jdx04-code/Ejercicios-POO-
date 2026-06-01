@@ -1,20 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package harrypotter;
 
-/**
- *
- * @author Jose Angarita
- */
+import controller.ControllerMenuPrincipal;
+import model.Escuela;
+import view.JFMenuPrincipal;
+
 public class HarryPotter {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+
+        Escuela escuela = new Escuela("Hogwarts");
+
+        // Cargar datos iniciales
+        escuela.cargarLocaciones();
+
+        JFMenuPrincipal menu = new JFMenuPrincipal();
+
+        new ControllerMenuPrincipal(menu, escuela);
+
+        menu.setLocationRelativeTo(null);
+        menu.setVisible(true);
     }
-    
 }

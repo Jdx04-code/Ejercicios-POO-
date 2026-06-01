@@ -1,24 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
-
-import java.util.ArrayList;
 
 public class ClaseMagica {
 
     private String tema;
-    private ArrayList<Estudiante> estudiantes;
+    private Profesor profesor;
+    private Estudiante estudiante;
+    private Hechizo hechizo;
 
-    public ClaseMagica(String tema) {
+    public ClaseMagica(Profesor profesor,
+            Estudiante estudiante, Hechizo hechizo,String tema) {
 
         this.tema = tema;
-        estudiantes = new ArrayList<>();
-    }
-
-    public void agregarEstudiante(Estudiante e){
-        estudiantes.add(e);
+        this.profesor = profesor;
+        this.estudiante = estudiante;
+        this.hechizo = hechizo;
     }
 
     public String getTema() {
@@ -29,14 +24,32 @@ public class ClaseMagica {
         this.tema = tema;
     }
 
-    public ArrayList<Estudiante> getEstudiantes() {
-        return estudiantes;
+    public Profesor getProfesor() {
+        return profesor;
     }
 
-    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
-        this.estudiantes = estudiantes;
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
-    
-    
-    
+
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
+
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
+
+    public Hechizo getHechizo() {
+        return hechizo;
+    }
+
+    public void setHechizo(Hechizo hechizo) {
+        this.hechizo = hechizo;
+    }
+
+    @Override
+    public String toString() {
+        return tema;
+    }
 }

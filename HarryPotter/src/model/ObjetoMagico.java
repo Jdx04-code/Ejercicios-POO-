@@ -26,4 +26,21 @@ public class ObjetoMagico {
     public String getNombre() {
         return nombre;
     }
+
+    public String getProposito() {
+        return proposito;
+    }
+
+    public void setProposito(String proposito) {
+        this.proposito = proposito;
+    }
+
+    public int getNivelObjeto() {
+        return nivelObjeto;
+    }
+
+    public void setNivelObjeto(int nivelObjeto) {
+        this.nivelObjeto = nivelObjeto;
+    }
+    
 }

@@ -179,10 +179,10 @@ public class JFExplorar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTextArea areaResults;
-    private javax.swing.JButton btnExplorar;
+    public javax.swing.JButton btnExplorar;
     public javax.swing.JButton btnSecreto;
-    private javax.swing.JComboBox<Object> cmbEstudiante;
-    private javax.swing.JComboBox<Object> cmbLocacion;
+    public javax.swing.JComboBox<Object> cmbEstudiante;
+    public javax.swing.JComboBox<Object> cmbLocacion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
